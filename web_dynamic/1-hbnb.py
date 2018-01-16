@@ -8,18 +8,17 @@ app = Flask('web_flask')
 app.url_map.strict_slashes = False
 
 
-@app.route('/0-hbnb')
+@app.route('/1-hbnb')
 def display_hbnb():
     """Generate page with popdown menu of states/cities"""
     states = storage.all('State')
     amenities = storage.all('Amenity')
     places = storage.all('Place')
-    cacheid=uuid4()
-    return render_template('0-hbnb.html',
+    return render_template('1-hbnb.html',
                            states=states,
                            amenities=amenities,
                            places=places,
-                           cache_id=cacheid)
+                           cache_id = uuid4())
 
 
 @app.teardown_appcontext
