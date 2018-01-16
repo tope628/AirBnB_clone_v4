@@ -10,11 +10,11 @@ $(() => {
     $('.amenities h4').text(aList.join(', '));
   });
   $.getJSON('http://0.0.0.0:5001/api/v1/status/', function (data) {
-    // if (this
-    // $('div#api_status').addClass('available');
-    alert('Data Loaded: ' + data);
-    // } else {
-    // $('div#api_status').removeClass('available');
-    // }
+    if (this.data['status'] === 'OK') {
+      $('div#api_status').addClass('available');
+      // alert('Data Loaded: ' + data);
+    } else {
+      $('div#api_status').removeClass('available');
+    }
   });
 });
