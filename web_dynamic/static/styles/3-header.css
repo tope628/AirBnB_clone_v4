@@ -13,3 +13,14 @@ header {
     background: url("../images/logo.png") no-repeat center;
     padding-left: 20px;
 }
+#api_status {
+	width: 100px;
+	height: 100px;
+	background-color: #cccccc;
+	-moz-border-radius: 40px;
+	-webkit-border-radius: 40px;
+	border-radius: 40px;
+}
+.available {
+	background-color: #ff545f;
+}
