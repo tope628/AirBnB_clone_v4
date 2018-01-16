@@ -2,14 +2,12 @@
 <html lang="zxx">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../static/styles/4-common.css">
-    <link rel="stylesheet" href="../static/styles/3-header.css">
-    <link rel="stylesheet" href="../static/styles/3-footer.css">
-    <link rel="stylesheet" href="../static/styles/6-filters.css">
-    <link rel="stylesheet" href="../static/styles/8-places.css">
-    <link rel="icon" href="../static/images/icon.png" type="image/png">
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="static/scripts/1-hbnb.js"></script>
+    <link rel="stylesheet" href="../static/styles/4-common.css?{{ cache_id }}">
+    <link rel="stylesheet" href="../static/styles/3-header.css?{{ cache_id }}">
+    <link rel="stylesheet" href="../static/styles/3-footer.css?{{ cache_id }}">
+    <link rel="stylesheet" href="../static/styles/6-filters.css?{{ cache_id }}">
+    <link rel="stylesheet" href="../static/styles/8-places.css?{{ cache_id }}">
+    <link rel="icon" href="../static/images/icon.png?{{ cache_id }}" type="image/png">
     <title>AirBnb Clone</title>
   </head>
   <body>
@@ -40,8 +38,7 @@
           <h4>&nbsp;</h4>
           <ul class="popover">
 	    {% for amty in amenities.values() %}
-	    <li><input type="checkbox" data-id="{{ amty.id }}"
-		       data-name="{{ amty.name }}"\>{{ amty.name }}</li>
+	    <li>{{ amty.name }}</li>
 	    {% endfor %}
           </ul>
 	</div>
