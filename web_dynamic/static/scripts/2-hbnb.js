@@ -12,13 +12,13 @@ $(function () {
   $.getJSON('http://0.0.0.0:5051/api/v1/status/')
     .done(function (data) {
       if (data.status === 'OK') {
-	$('#api_status').addClass('available');
+        $('#api_status').addClass('available');
       } else {
-	$('#api_status').removeClass('available');
+        $('#api_status').removeClass('available');
       }
     })
     .fail(function (jqxhr, testStatus, error) {
-      let err = textStatus + ", " +error;
+      let err = textStatus + ', ' + error;
       console.log(err);
-      });
+    });
 });
