@@ -7,7 +7,7 @@ $(function () {
     } else {
       aList.splice(aList.indexOf(amen), 1);
     }
-    $('.amenities h4').text(aList.join(', '));
+    $('.amenities h4').html(aList.length > 0 ? aList.join(', ') : '&nbsp;');
   });
   $.getJSON('http://0.0.0.0:5051/api/v1/status/')
     .done(function (data) {

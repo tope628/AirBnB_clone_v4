@@ -7,6 +7,6 @@ $(() => {
     } else {
       aList.splice(aList.indexOf(amen), 1);
     }
-    $('.amenities h4').text(aList.join(', '));
+    $('.amenities h4').html(aList.length > 0 ? aList.join(', ') : '&nbsp;');
   });
 });
