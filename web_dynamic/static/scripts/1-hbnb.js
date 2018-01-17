@@ -1,12 +1,12 @@
 $(() => {
   let aList = [];
-  $('li input[type=checkbox]').change(() => {
-    let amen = $(this).attr('data-id');
-    if (this.checked && $.inArray(amen, aList === -1)) {
+  $('li input[type=checkbox]').change(function () {
+    let amen = $(this).attr('data-name');
+    if (this.checked) {
       aList.push(amen);
     } else {
       aList.splice(aList.indexOf(amen), 1);
     }
-    $('.amenities h4').html(aList.length > 0 ? '<em>' + aList.join(', ') + '</em>' : '&nbsp;');
+    $('.amenities h4').text(aList.join(', '));
   });
 });
