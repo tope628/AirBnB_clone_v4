@@ -1,4 +1,4 @@
-$(() => {
+$(function () {
   let aList = [];
   $('li input[type=checkbox]').change(function () {
     let amen = $(this).attr('data-name');
@@ -9,12 +9,16 @@ $(() => {
     }
     $('.amenities h4').text(aList.join(', '));
   });
-  $.getJSON('http://0.0.0.0:5001/api/v1/status/', function (data) {
-    if (this.data['status'] === 'OK') {
-      $('div#api_status').addClass('available');
-      // alert('Data Loaded: ' + data);
-    } else {
-      $('div#api_status').removeClass('available');
-    }
-  });
+  $.getJSON('http://0.0.0.0:5051/api/v1/status/')
+    .done(function (data) {
+      if (data.status === 'OK') {
+	$('#api_status').addClass('available');
+      } else {
+	$('#api_status').removeClass('available');
+      }
+    })
+    .fail(function (jqxhr, testStatus, error) {
+      let err = textStatus + ", " +error;
+      console.log(err);
+      });
 });
