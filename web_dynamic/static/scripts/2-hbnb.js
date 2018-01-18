@@ -9,7 +9,7 @@ $(function () {
     }
     $('.amenities h4').html(aList.length > 0 ? aList.join(', ') : '&nbsp;');
   });
-  $.getJSON('http://0.0.0.0:5051/api/v1/status/')
+  $.getJSON('http://0.0.0.0:5001/api/v1/status/')
     .done(function (data) {
       if (data.status === 'OK') {
         $('#api_status').addClass('available');
