@@ -64,7 +64,7 @@ $(function () {
                 });
 	      }
 	      $('#show').click(function () {
-                $('ul#rev').toggle('slow');
+                $('ul#rev').toggle();
 	      });
 	    });
 	  });
