@@ -58,23 +58,22 @@ $(function () {
 	    $('.places ').append('<article id="' + place.id + '"><h2>' + place.name + '</h2><div class="price_by_night"><p>$' + place.price_by_night + '</p></div><div class="information"><div class="max_guest"><div class="guest_image"></div><p>' + place.max_guest + '</p></div><div class="number_rooms"><div class="bed_image"></div><p>' + place.number_rooms + '</p></div><div class="number_bathrooms"><div class="bath_image"></div><p>' + place.number_bathrooms + '</p></div></div><div class="user"><p><b>Owner: </b>' + user.first_name + '  ' + user.last_name + '</p></div><div class="description"><p>' + place.description + '</p></div></article>');
 	    $.getJSON('http://0.0.0.0:5001/api/v1/places/' + place.id + '/reviews', (js) => {
 	      $('#'+ place.id).append('<div class="reviews"><h2>Reviews  <span id="show">show</span></h2></div><div><ul id="rev"></ul><div/>');
+	      $('#' + place.id + ' span').click(function () {
+		$('#' + place.id + ' ul[id="rev"]').toggle();
+	      });
 	      for (let i of js) {
                 $.getJSON('http://0.0.0.0:5001/api/v1/users/' + i.user_id, function (user) {
-		  $('#rev').append('<li><h3>' + user.name + '</h3><p>' + i.text + '</p></li>');
+		  $('#' + place.id + ' ul[id="rev"]').append('<li><h3>' + user.first_name + ' ' + user.last_name + '</h3><p>' + i.text + '</p></li>');
                 });
 	      }
-	      $('#show').click(function () {
-                $('ul#rev').toggle();
-	      });
-	    });
-	  });
-	  }
-      }
+	    })
+	  })
+	}}
     });
   }
-  search_places('{}');
-  $('.filters button').click(function () {
-    $('.places  article').remove();
-    search_places(JSON.stringify(dict));
-  });
+search_places('{}');
+$('.filters button').click(function () {
+  $('.places  article').remove();
+  search_places(JSON.stringify(dict));
+});
 });

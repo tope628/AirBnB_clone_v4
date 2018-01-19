@@ -123,6 +123,7 @@
 }
 #rev {
     display: none;
+    list-style:none;
 }
 #show {
     height: 26px;
