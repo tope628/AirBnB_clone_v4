@@ -46,7 +46,7 @@ $(function () {
       let err = testStatus + ', ' + error;
       console.log(err);
     });
-  function search_places (data) {
+  function searchPlaces (data) {
     $.ajax({
       type: 'POST',
       url: 'http://0.0.0.0:5001/api/v1/places_search',
@@ -75,5 +75,4 @@ search_places('{}');
 $('.filters button').click(function () {
   $('.places  article').remove();
   search_places(JSON.stringify(dict));
-});
 });
