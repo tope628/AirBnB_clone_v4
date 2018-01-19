@@ -71,8 +71,9 @@ $(function () {
 	}}
     });
   }
-search_places('{}');
-$('.filters button').click(function () {
-  $('.places  article').remove();
-  search_places(JSON.stringify(dict));
+  searchPlaces('{}');
+  $('.filters button').click(function () {
+    $('.places  article').remove();
+    searchPlaces(JSON.stringify(dict));
+  });
 });
