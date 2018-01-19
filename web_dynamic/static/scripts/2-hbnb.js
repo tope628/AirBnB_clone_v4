@@ -17,7 +17,7 @@ $(function () {
         $('#api_status').removeClass('available');
       }
     })
-    .fail(function (jqxhr, testStatus, error) {
+    .fail(function (jqxhr, textStatus, error) {
       let err = textStatus + ', ' + error;
       console.log(err);
     });
