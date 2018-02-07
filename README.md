@@ -152,8 +152,9 @@ No known bugs at this time.
 
 ###### Version 4
 
-- Minas Anton -
-- Tope Agboola - 
+- Tope Agboola -  [Github](https://github.com/tope628) / [Twitter](https://twitter.com/topea_)  
+- Minas Anton - [Github](https://github.com/MinasA1) / [Twitter](https://twitter.com/minas_anton)  
+
 ###### Version 3
 
 - Alexa Orrico - [Github](https://github.com/alexaorrico) / [Twitter](https://twitter.com/alexa_orrico)  
